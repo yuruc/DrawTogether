@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Edit Your Profile</title>
+
+    <!-- Bootstrap Core CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static "css/network.css" %}">
+    <link rel="stylesheet" href="{% static "css/unify.css" %}">
+
+    <!-- MetisMenu CSS -->
+    <link rel="stylesheet" href="{% static "css/metisMenu.min.css" %}">
+
+    {#    <!-- Custom CSS -->#}
+    <link rel="stylesheet" href="{% static "css/sb-admin-2.css" %}">
+
+    {#    <!-- Morris Charts CSS -->#}
+    <link rel="stylesheet" href="{% static "css/morris.css" %}">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{% static "css/font-awesome/css/font-awesome.min.css" %}">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{% static "css/font-awesome/css/font-awesome.min.css" %}">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+          type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body style="background-color: white">
+<nav class="navbar navbar-default navbar-fixed-top topnav navbar-fixed-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand corner" href="{% url 'dashboard' %}">Draw Together!</a>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'logout' %}">
+                <i class="fa fa-sign-out fa-fw"></i>Logout
+            </a>
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+</nav>
+
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <br><br>
+                    <h1 class="whitecontent">Edit Your Profile!</h1>
+                    <hr class="intro-divider">
+                    <form class="form-horizontal" class="text-center col-md-8 col-sm-offset-2">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4 whitecontent">First name
+                                <span class="glyphicon glyphicon-pencil"></span></label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="firstname" placeholder="Your first name"
+                                       id="firstname" autofocus="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label whitecontent">Last name
+                                <span class="glyphicon glyphicon-pencil"></span></label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="lastname" placeholder="Your last name"
+                                       id="lastname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label whitecontent">User name
+                                <span class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="username" placeholder="Your user name"
+                                       id="username">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label whitecontent">Password
+                                <span class="glyphicon glyphicon-triangle-right"></span></label>
+                            <div class="col-sm-3">
+                                <input type="password" class="form-control" name="password1"
+                                       placeholder="Create a password" id="password1">
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label whitecontent">Confirm Password
+                                <span class="glyphicon glyphicon-triangle-right"></span></label>
+                            <div class="col-sm-3">
+                                <input type="password" class="form-control" name="password2"
+                                       placeholder="Confirm the password" id="password2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label whitecontent">Gender
+                                <span class="glyphicon glyphicon-heart"></span></label>
+                            <div class="col-sm-3">
+                                <select id="gender" class="form-control">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                    <option>Rather not say</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label whitecontent">Email
+                                <span class="glyphicon glyphicon-envelope"></span></label>
+                            <div class="col-sm-3">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email Address"
+                                       id="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4 whitecontent">Birthday
+                                <span class="glyphicon glyphicon-time"></span></label>
+                            <div class="col-sm-2">
+                                <select id="Month" class="form-control">
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>August</option>
+                                    <option>Sempetember</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="number" class="form-control" name="day" id="day" placeholder="Day">
+                            </div>
+                            <div class="col-sm-2">
+                                <select id="year" class="form-control">
+                                    <script>
+                                        var i;
+                                        for (i = 1900; i < 2018; i++) {
+                                            document.write('<option>' + i + '</option>')
+                                        }
+                                    </script>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="col-sm-offset-4">
+                                <br><br>
+                                <button type="submit" class="btn btn-info btn-large">Change Avatar <span
+                                        class="fa fa-upload"></span></button>
+                                <button type="submit" class="btn btn-info btn-large">Submit <span
+                                        class="glyphicon glyphicon-knight"></span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="copyright text-muted small">Copyright &copy; 15637 Team 12. All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

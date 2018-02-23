@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="I'm playing Draw Together, come and join us at http://54.165.110.151:8000!"/>
+
+    <!-- Google login requirements -->
+    <meta name="google-signin-client_id"
+          content="689656159926-0l8bkphc5vbgn0k9gi8o8kc53pduc10l.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/keyin.css" %}">
+    <link rel="stylesheet" href="{% static "css/unify.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Facebook share -->
+    <meta property="og:url" content="http://54.165.110.151:8000"/>
+    <meta property="og:description"
+          content="I'm playing Draw Together, come and join us at http://54.165.110.151:8000!"/>
+
+
+
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1813933208925788";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand corner" onclick="exit()" style="font-size: 250%; font-family: 'Indie Flower', cursive;">Draw
+            Together!</a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <div class="nav navbar-top-links navbar-left">
+
+        <div class="row">
+            <div class="middle_align_colors">
+
+                <div class="col-md">
+                    <tr>
+                        <td>
+                            <button type="button" class="button_black" value="black" font size="20px"
+                                    onclick="javascript:selectColor('black');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="button_red" value="black" font size="20px"
+                                    onclick="javascript:selectColor('red');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="button_orange" value="black" font size="20px"
+                                    onclick="javascript:selectColor('orange');"></button>
+                        </td>
+                        </td>
+
+                        <td>
+                            <button type="button" class="button_yellow" value="black" font size="20px"
+                                    onclick="javascript:selectColor('yellow');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="button_green" value="black" font size="20px"
+                                    onclick="javascript:selectColor('green');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="button_blue" value="black" font size="20px"
+                                    onclick="javascript:selectColor('blue');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="button_darkblue" value="black" font size="20px"
+                                    onclick="javascript:selectColor('#00008B');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="button_purple" value="black" font size="20px"
+                                    onclick="javascript:selectColor('purple');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary fa fa-eraser"
+                                    onclick="javascript:selectColor('white');"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary fa fa-close"
+                                    onclick="javascript:clearArea();"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary fa fa-save"
+                                    onclick="javascript:savePic();"></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary fa fa-volume-up"
+                                    onclick="music_control()"></button>
+                        </td>
+
+                    </tr>
+
+                    {% load static %}
+                    <audio autoplay loop src="{% static "music/Soundtrack-Super_Mario01.mp3" %}"
+                           id="background_music">
+                        <p>Your browser does not support the <code>audio</code> element.</p>
+                    </audio>
+
+                    <!--http://stackoverflow.com/questions/6442427/muting-a-html5-audio-element-using-a-custom-button -->
+                    </tr>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav navbar-top-links navbar-right" style="padding-top: 3px; padding-right: 10px">
+
+        <tr>
+            <td>
+                <a class="fb-xfbml-parse-ignore" target="_blank"
+                   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F54.165.110.151%3A8000%2F&amp;src=sdkpreparse">
+                    <span class="button button-facebook" data-href="https://54.165.110.151:8000"
+                          data-layout="button_count"
+                          data-size="small" data-mobile-iframe="true"></span>
+                </a>
+            </td>
+            <td><a href="https://plus.google.com/share?url=http://54.165.110.151:8000">
+                <span class="button button-g" alt="Google+" title="Google+"/>
+            </a>
+            </td>
+            <td>
+                <a href="https://twitter.com/intent/tweet?text=I'm playing Draw Together! Come and join me at http://54.165.110.151:8000!">
+                    <span id="share_twitter" class="button button-twitter twitter-share-button"></span>
+                </a>
+
+            </td>
+        </tr>
+    </div>
+
+
+</nav>
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+{% load static %}
+<script src="{% static "js/websocketbridge.js" %}"></script>
+<script src="{% static "js/draw.js" %}"></script>
+
+
+<div class="lead container-fluid">
+    <span><button class="fa fa-clock-o"></button></span><span><span id="timer"></span></span>
+
+    <h1 id="gamelabel" value="{{ game.label }}">
+    </h1>
+    <div id="word">
+        <p class="middle_align_text" style="font-size: 170%">Please draw: {{ game.target_word }}</p>
+    </div>
+
+</div>
+<div align="center">
+
+    <canvas id="myCanvas" width="1000" height="500" style="border:2px solid #6699cc"></canvas>
+
+
+    <div class="card">
+        <div class="card-header">
+            <div class="container-fluid">
+                <div>
+                    <div class="lead">
+                        <form>
+
+                            <button type="button" class="button button-large button-green" onclick="skip()">Skip
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

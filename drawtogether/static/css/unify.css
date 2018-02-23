@@ -1,0 +1,11 @@
+.corner {
+    font-size: 180%;
+    font-family: "Papyrus";
+    font-weight: bolder;
+    font-style: italic;
+    color: grey;
+}
+
+.center {
+    text-align: center;
+}

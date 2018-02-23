@@ -1,0 +1,138 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <title>guess</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/keyin.css" %}">
+    <link rel="stylesheet" href="{% static "css/unify.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome/css/font-awesome.min.css" %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+</head>
+<body onload="load()">
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1813933208925788";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand corner" href="{% url 'dashboard' %}"
+       style="font-family: 'Indie Flower', cursive; font-size: 160%; padding-top: 0px">Draw Together!</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#"> <span class="sr-only">(current)</span></a>
+
+            <input class="button_notsee" type="button" value="" font size="20px" disabled>
+            <input class="button_notsee" type="button" value="" font size="20px" disabled>
+            <input class="button_notsee" type="button" value="" font size="20px" disabled>
+
+            <a class="fb-xfbml-parse-ignore" target="_blank"
+               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F54.165.110.151%3A8000%2F&amp;src=sdkpreparse">
+                    <span class="button button-facebook" data-href="https://54.165.110.151:8000"
+                          data-layout="button_count"
+                          data-size="small" data-mobile-iframe="true"></span>
+            </a>
+            {#            <button id="share_google" class="button button-g"></button>#}
+            <a href="https://plus.google.com/share?url=http://54.165.110.151:8000">
+                <span class="button button-g" alt="Google+" title="Google+"/>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=I'm playing Draw Together! Come and join me at http://54.165.110.151:8000!">
+                <span id="share_twitter" class="button button-twitter twitter-share-button"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<center>
+    {% if image %}
+        <img src="{% url 'photo' image.id %}" height="50%" width="50%" class={{ image.title }} id="image">
+    {% endif %}
+</center>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="lead">
+                <div class="text-center">
+                    <form id="blank-button" class="text-center">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-block">
+    <div class="lead">
+        <div class="text-center">
+            <button type="button" onclick="check()" class="button button-medium button-gray">Enter
+            </button>
+            <button type="button" id="btnShow" class="button button-medium button-gray" data-toggle="modal"
+                    data-target="#myModal">Next
+            </button>
+            <tr>
+                <div id="pink-button">
+                </div>
+                <button type="button" onclick="dele()" id="delete_button" class="button button-medium button-gray">Del
+                </button>
+                <button type="button" onclick="clear()" id="clear_button" class="button button-medium button-gray">
+                    Clear
+                </button>
+        </div>
+        </tr>
+
+    </div>
+</div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">What's next step?</h4>
+            </div>
+            <div class="modal-body">
+                <a href="{% url 'random' %}">Practice Again!</a>
+            </div>
+            <div class="modal-body">
+                <a href="{% url 'dashboard' %}">Enough practice!</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="{% static "js/2g.js" %}"></script>
+</body>
+</html>

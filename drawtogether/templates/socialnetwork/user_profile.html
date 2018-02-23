@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/network.css" %}">
+
+    <!-- MetisMenu CSS -->
+    <link rel="stylesheet" href="{% static "css/metisMenu.min.css" %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static "css/sb-admin-2.css" %}">
+
+    <!-- Morris Charts CSS -->
+    <link rel="stylesheet" href="{% static "css/morris.css" %}">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{% static "css/font-awesome/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/unify.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand corner" href="{% url 'dashboard' %}" style="font-family: 'Indie Flower', cursive; font-size: 200%">Draw Together!</a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="divider"></li>
+            <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="{% url 'dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'new_game' %}"><i class="fa fa-gamepad fa-fw"></i> New Game</a>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="{% url 'global' %}"><i class="fa fa-edit fa-fw"></i> Global Stream</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'friend' %}"><i class="fa fa-paper-plane-o fa-fw"></i> Friend Stream</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'random' %}"><i class="fa fa-gamepad fa-fw"></i> Practice</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+
+    <div id="page-wrapper">
+        <br>
+        <div class="post-name text-align: center" style="font-size: 400%; font-family: 'Indie Flower', cursive; color: #9d9d9d">
+            {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}
+        </div>
+        {% if flag %}
+            <div class="text-align: center">
+                <a href="{% url 'addfriend' user.id %}">
+                    <button type="button" class="btn btn-success btn-xs"><span
+                            class="fa fa-plus fa-fw"></span>Add Friend
+                    </button>
+                </a>
+                <a href="{% url 'delfriend' user.id %}">
+                    <button type="button" class="btn btn-warning btn-xs"><span
+                            class="fa fa-minus fa-fw"></span>Delete Friend
+                    </button>
+                </a>
+            </div>
+        {% endif %}
+        <br>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-gift fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ win }}</div>
+                                <div>All Wins!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-book fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ total }}</div>
+                                <div>All Records!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-bomb fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ loss }}</div>
+                                <div>All Failures!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-calculator fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ rate|floatformat:"0" }}%</div>
+                                <div>The Ratio!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        {% for image in images %}
+            <div class="global-jumbotron">
+                <div class="global-container">
+                    {% load static %}
+                    <span class="chat-img pull-left">
+                    <img src="{% static "images/social/beginning.jpg" %}" alt="profile" class="profile_image"></span>
+                    <h4>
+                        <div style="padding-left: 1%"> {{ image.user.first_name|capfirst }} {{ image.user.last_name|capfirst }}</div>
+                    </h4>
+                    <center><img src="{% url 'photo' image.id %}" height="120px" width="200px"></center>
+                    <center>
+                        <div style="padding-left: 6%"><b>Title: {{ image.title }}</b></div>
+                    </center>
+
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <!-- /#page-wrapper -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small">Copyright &copy; 15637 Team 12. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+{% load static %}
+<script src="{% static "js/jquery.min.js" %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="{% static "js/metisMenu.min.js" %}"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="{% static "js/morris.min.js" %}"></script>
+<script src="{% static "js/raphael.min.js" %}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{% static "js/sb-admin-2.js" %}"></script>
+
+</body>
+
+</html>

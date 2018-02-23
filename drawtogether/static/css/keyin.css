@@ -1,0 +1,536 @@
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2 {
+    background-color: #FFFF99;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 16px;
+    border: 2px solid black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#container {
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-bottom: 400px;
+    border: 1px solid 000000;
+}
+
+.middle_align_text {
+    font-family: 'Indie Flower', cursive;
+    font-size: 28px;
+    padding-left: 440px;
+}
+
+.middle_align_skip {
+    padding-left: 650px;
+}
+
+.middle_align_colors {
+    padding-top: 6px;
+    padding-left: 130px;
+}
+
+.right_align {
+
+    padding-left: 500px;
+}
+
+.button {
+
+}
+
+.button_black {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: black;
+}
+
+.button_red {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: red;
+}
+
+.button_orange {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: orange;
+}
+
+.button_yellow {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: yellow;
+}
+
+.button_green {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: green;
+}
+
+.button_blue {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: blue;
+}
+
+.button_darkblue {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: #00008B;
+}
+
+.button_purple {
+    height: 35px;
+    width: 37px;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: purple;
+}
+
+.button_notsee {
+    background: none;
+    visibility: hidden;
+    width: 300px;
+}
+
+button {
+    background: none;
+    border: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* button and svg is from google draw with some modification*/
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 50px;
+    width: 47px;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+      not supported by any browser */
+    padding-top: 0;
+    padding-left: 6px;
+    padding-right: 3px;
+    padding-bottom: 18px;
+    background-repeat: no-repeat;
+    background-size: 94px 339px;
+    background-position: 0 0;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.button.button-close, .button.button-pink, .button.button-gray, .button.button-facebook, .button.button-twitter, .button.button-g {
+    background-image: url(../images/svg/buttons_small.svg);
+}
+
+.fb-share-button {
+    background-image: url(../images/svg/buttons_small.svg);
+}
+
+.button.button-close {
+    background-position: 0 -56px;
+}
+
+.button.button-close:active {
+    background-position: -53px -56px;
+}
+
+.button.button-pink {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    background-position: 0 0;
+}
+
+.button.button-pink:hover {
+    padding-top: 10px;
+    padding-right: 2px;
+    font-size: 18px;
+    background-position: -53px 0;
+}
+
+.button.button-gray {
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    background-position: 0 -280px;
+}
+
+.button.button-gray:hover {
+    padding-top: 10px;
+    font-size: 28px;
+    background-position: -53px -280px;
+}
+
+.button.button-facebook {
+    background-position: 0 -168px;
+}
+
+.button.button-facebook:hover {
+    background-position: -53px -168px;
+}
+
+.button.button-twitter {
+    background-position: 0 -112px;
+}
+
+.button.button-twitter:hover {
+    background-position: -53px -112px;
+}
+
+.button.button-g {
+    background-position: 0 -224px;
+}
+
+.button.button-g:hover {
+    background-position: -53px -224px;
+}
+
+.button.button-medium {
+    background-image: url(../images/svg/buttons_medium.svg);
+}
+
+.button.button-medium.button-gray {
+    background-position: 0 0;
+}
+
+.button.button-medium.button-gray:hover {
+    background-position: -200px 0;
+}
+
+.button.button-yellow, .button.button-green, .button.button-medium-gray {
+    background-image: url(../images/svg/buttons_large.svg);
+}
+
+.button.button-green {
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    background-position: 0 0;
+}
+
+.button.button-green:hover {
+    padding-top: 10px;
+    font-size: 28px;
+    background-position: -200px 0;
+}
+
+.button.button-yellow {
+    background-position: 0 -71px;
+}
+
+.button.button-yellow:active {
+    background-position: -200px -71px;
+}
+
+.button:active {
+    padding-left: 3px;
+    padding-right: 9px;
+}
+
+.button:active span {
+    position: relative;
+    top: 9px;
+}
+
+.button.button-medium {
+    height: 58px;
+    width: 118px;
+    background-size: 400px 142px;
+    padding-top: 0;
+    padding-left: 9px;
+    padding-right: 8px;
+}
+
+.button.button-medium:active {
+    padding-right: 12px;
+}
+
+.button.button-medium:active span {
+    position: relative;
+    top: 8px;
+}
+
+.button.button-large {
+    height: 58px;
+    width: 200px;
+    background-size: 400px 142px;
+    padding-top: 0;
+    padding-left: 9px;
+    padding-right: 8px;
+}
+
+.button.button-large:active {
+    padding-left: 3px;
+}
+
+.button.button-large:active span {
+    position: relative;
+    top: 8px;
+}
+
+.button.button-drawing {
+    background-image: url(../images/svg/buttons_drawing.svg);
+    height: 140px;
+    width: 198px;
+    background-position: 0 0;
+    background-size: 400px 142px;
+    padding-top: 0px;
+    padding-left: 14px;
+    padding-right: 8px;
+}
+
+.button.button-drawing:active {
+    background-position: -200px 0;
+    padding-right: 12px;
+    padding-left: 10px;
+    padding-top: 8px;
+}
+
+.button .icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 170px 26px;
+    width: 31px;
+    height: 26px;
+    margin-left: 1px;
+    margin-top: -3px;
+    margin-right: 5px;
+    background-image: url(../images/svg/icons.svg);
+}
+
+.button .icon.icon-undo {
+    background-position: 2px 0;
+}
+
+.button .icon.icon-clear {
+    background-position: -54px 0;
+}
+
+.button .icon.icon-skip {
+    background-position: -26px 0;
+}
+
+.button .icon.icon-back {
+    background-position: -86px 1px;
+}
+
+.button.button-medium span, .button.button-large span {
+    float: left;
+}
+
+.button.button-medium span.center, .button.button-large span.center {
+    float: initial;
+}
+
+.button .tooltip {
+    position: absolute;
+    color: black;
+    text-align: left;
+    font-size: 35px;
+}
+
+.button#button-undo .tooltip {
+    top: -56px;
+    left: -90px;
+}
+
+.button#button-undo .tooltip .arrow-2 {
+    left: 47px;
+    top: 15px;
+}
+
+.button#button-clear .tooltip {
+    top: -87px;
+    left: -36px;
+}
+
+.button#button-clear .tooltip .arrow-3 {
+    left: 31px;
+    top: 25px;
+}
+
+.button#button-skip .tooltip {
+    top: -93px;
+    left: 42px;
+}
+
+.button#button-skip .tooltip .arrow-4 {
+    left: 10px;
+    top: 35px;
+}
+
+.button.button-close .tooltip {
+    top: 85px;
+    left: -26px;
+}
+
+.button.button-close .tooltip .arrow-1 {
+    left: 5px;
+    top: -40px;
+}

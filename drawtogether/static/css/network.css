@@ -1,0 +1,146 @@
+.intro-header {
+    background: url(../images/register/banner-bg.jpg) no-repeat center center;
+}
+
+.navleft {
+    font-family: Arial;
+    font-size: 125%;
+}
+
+.navright {
+    font-family: Arial;
+    font-size: 125%;
+}
+
+.whitecontent {
+    color: white;
+}
+
+.profile {
+    font-family: Chalkboard;
+    font-size: 170%;
+    color: blue;
+}
+
+.content {
+    font-size: 85%;
+    font-family: "Apple LiGothic";
+}
+
+.editprofile {
+    font-size: 120%;
+    font-family: "ITF Devanagari Marathi";
+    color: #66afe9;
+}
+
+.editprofile:hover {
+    color: black;
+}
+
+.editcol {
+    font-family: "Al Bayan";
+    font-size: 120%;
+    width: 400px;
+}
+
+.editcontent {
+    width: 40px;
+}
+
+.editbutton {
+    width: 340px;
+    position: absolute;
+    top: 970px;
+    left: 275px;
+}
+
+.rightpart {
+    padding-left: 220px;
+}
+
+.leftpart {
+    padding-left: 150px;
+}
+
+.editavatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.form-newpost {
+    color: #46b8da;
+    font-size: 150%;
+}
+
+.content-newpost {
+}
+
+.globalfile {
+    padding-left: 70px;
+}
+
+#id_content {
+    height: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    resize: none;
+}
+
+/*.global-button {*/
+    /*position: absolute;*/
+    /*top: 100px;*/
+    /*left: 665px;*/
+    /*width: 100px;*/
+/*}*/
+
+.global-hr {
+    padding-left: 150px;
+}
+
+.global-avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+}
+
+.global-container {
+    height: 100px;
+}
+
+.profile_image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.global-jumbotron {
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.follow-button {
+    width: 200px;
+    position: absolute;
+    left: 130px;
+}
+
+.post-name {
+    color: #46b8da;
+}
+
+.post-name:hover {
+    color: black;
+}
+
+.search-user {
+    margin-top: 13px;
+    border-radius: 15px;
+    width: 200px;
+}
